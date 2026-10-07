@@ -9,7 +9,8 @@ paths:
 PURPOSE
 
 This file demonstrates how project-specific Claude Code rules can be
-organized under .claude/rules/.
+organized under .claude/rules/. The `.md.example` suffix intentionally
+keeps it outside the active rule discovery path.
 
 Rules are useful when additional instructions apply only to a specific
 part of the repository or when Claude-specific guidance benefits from
@@ -19,7 +20,7 @@ This example is not intended to define an actual project rule.
 
 When creating a project from this template:
 
-1. Copy or rename this file for a concrete rule.
+1. Copy or rename this file to a `.md` file under `.claude/rules/` for a concrete rule.
 2. Replace the example path pattern with the intended scope.
 3. Replace the placeholder instructions with actual guidance.
 4. Remove the paths frontmatter when the rule should apply globally.

@@ -109,7 +109,20 @@
 # - AGENTS.md                    project-level Codex instructions
 # - docs/                       shared project knowledge
 # - .codex/agents/              specialized Codex agents
-# - .codex/skills/              reusable Codex skills
+# - .agents/skills/             reusable Codex skills
 # - .codex/hooks.json           Codex lifecycle hooks
 #
 # Keep this file focused on actual Codex configuration.
+
+
+# ---------------------------------------------------------------------
+# Custom agents
+# ---------------------------------------------------------------------
+#
+# A concrete role must be registered here and point to a TOML file under
+# .codex/agents/. The example remains commented so no role is active in
+# the template.
+#
+# [agents.reviewer]
+# description = "Reviews changes for correctness and safety."
+# config_file = "agents/reviewer.toml"

@@ -95,11 +95,10 @@ Codex and Claude Code may use different configuration mechanisms, but they shoul
 
 The template exposes the major extension mechanisms supported by the included AI tools without enabling arbitrary project behavior.
 
-Examples are provided for:
+Templates are provided for:
 
 - agents
 - skills
-- commands
 - rules
 - hooks
 - MCP
@@ -136,24 +135,24 @@ ai-assisted-project-template/
 │
 ├── .claude/
 │   ├── agents/
-│   │   └── example.md
-│   ├── commands/
-│   │   └── example.md
+│   │   └── example.md.example
 │   ├── hooks/
 │   │   └── example.py
 │   ├── rules/
-│   │   └── example.md
+│   │   └── example.md.example
 │   ├── skills/
 │   │   └── example-skill/
-│   │       └── SKILL.md
+│   │       └── SKILL.md.example
 │   └── settings.json
+│
+├── .agents/
+│   └── skills/
+│       └── example-skill/
+│           └── SKILL.md
 │
 ├── .codex/
 │   ├── agents/
 │   │   └── example.toml
-│   ├── skills/
-│   │   └── example-skill/
-│   │       └── SKILL.md
 │   ├── config.toml
 │   └── hooks.json
 │
@@ -453,7 +452,8 @@ The template intentionally enables no project-specific MCP server or other exter
 
 ## `.codex/agents/`
 
-Contains project-specific specialized Codex agent configurations.
+Contains neutral templates and concrete project-specific Codex agent
+configuration files.
 
 The included:
 
@@ -463,18 +463,22 @@ The included:
 
 is a neutral starting point.
 
-Create specialized agents only when a separate role provides a concrete benefit.
+To activate a concrete role, copy or rename the template, add the supported
+role configuration, and register the role in `.codex/config.toml` under
+`[agents.<name>]` with `config_file = "agents/<file>.toml"`.
+
+The template does not register an agent by default.
 
 ---
 
-## `.codex/skills/`
+## `.agents/skills/`
 
-Contains reusable Codex project skills.
+Contains reusable repository-scoped Codex project skills.
 
 The example skill is located at:
 
 ```text
-.codex/skills/example-skill/SKILL.md
+.agents/skills/example-skill/SKILL.md
 ```
 
 A skill should represent a focused, reusable capability or workflow.
@@ -530,34 +534,13 @@ Rules are useful when instructions apply to a particular part of the repository 
 The included:
 
 ```text
-.claude/rules/example.md
+.claude/rules/example.md.example
 ```
 
-demonstrates the intended structure.
+is a disabled template. Copy or rename it to a `.md` file under
+`.claude/rules/` before using it as a rule.
 
 Avoid using rules to duplicate shared project documentation.
-
----
-
-## `.claude/commands/`
-
-Contains reusable project commands that users intentionally invoke.
-
-The included:
-
-```text
-.claude/commands/example.md
-```
-
-provides a starting point for workflows such as:
-
-- reviews
-- diagnostics
-- release preparation
-- project health checks
-- project-specific maintenance
-
-Commands should clearly document their inputs, outputs, and side effects.
 
 ---
 
@@ -568,10 +551,13 @@ Contains reusable Claude Code skills.
 The example is located at:
 
 ```text
-.claude/skills/example-skill/SKILL.md
+.claude/skills/example-skill/SKILL.md.example
 ```
 
-Skills should represent focused capabilities rather than becoming independent copies of the project's documentation.
+This is a disabled template. Create
+`.claude/skills/<skill-name>/SKILL.md` for a concrete skill. Skills should
+represent focused capabilities rather than independent copies of project
+documentation.
 
 ---
 
@@ -582,10 +568,11 @@ Contains specialized Claude Code agents.
 The included:
 
 ```text
-.claude/agents/example.md
+.claude/agents/example.md.example
 ```
 
-demonstrates how a focused role can define responsibilities, boundaries, required context, validation, and escalation conditions.
+is a disabled template. Copy or rename it to a `.md` file under
+`.claude/agents/` before using it as a specialized agent.
 
 Specialized agents should have narrower responsibilities than the default project agent.
 
@@ -680,7 +667,6 @@ They serve different purposes.
 | Agent instructions | General behavior for a specific AI tool |
 | Rules | Additional contextual or scoped instructions |
 | Skills | Reusable capabilities and workflows |
-| Commands | Explicitly invoked workflows |
 | Specialized agents | Focused roles with separate responsibilities |
 | Hooks | Automated lifecycle behavior |
 | MCP | Access to external tools and systems |
@@ -777,7 +763,7 @@ Examples:
 - remove `.claude/`, `CLAUDE.md`, and `.mcp.json` if Claude Code is not used
 - remove example skills when custom skills are unnecessary
 - remove example agents when specialized agents are unnecessary
-- remove unused commands and rules
+- remove unused rules
 - replace `.gitkeep` files when real project files populate the directories
 - replace the generic source layout when the project requires another structure
 
@@ -805,7 +791,6 @@ After creating a repository from this template:
 - [ ] Configure or remove `.mcp.json` as appropriate.
 - [ ] Remove unused example agents.
 - [ ] Remove unused example skills.
-- [ ] Remove unused example commands.
 - [ ] Remove unused example rules.
 - [ ] Remove unused example hooks.
 - [ ] Define the project's source and test directory structure.

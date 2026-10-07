@@ -9,7 +9,8 @@ description: Example specialized Claude Code agent. Replace with a clear descrip
 PURPOSE
 
 This file demonstrates how a specialized project-level Claude Code agent
-can be defined.
+can be defined. The `.md.example` suffix intentionally keeps it outside
+the active agent discovery path.
 
 Specialized agents are useful when a task benefits from a focused role,
 separate context, specific tools, or narrower responsibilities.
@@ -18,7 +19,7 @@ This example does not define an actual project role.
 
 When creating a project from this template:
 
-1. Copy or rename this file for a concrete agent.
+1. Copy or rename this file to a `.md` file under `.claude/agents/` for a concrete agent.
 2. Replace the example metadata.
 3. Define a narrow and useful responsibility.
 4. Configure additional agent capabilities only when required.

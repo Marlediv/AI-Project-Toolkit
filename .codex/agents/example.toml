@@ -10,8 +10,10 @@
 # When creating a project from this template:
 #
 # 1. Copy or rename this file for a concrete agent role.
-# 2. Replace the example values with project-specific configuration.
-# 3. Remove this example if specialized agents are not required.
+# 2. Add the role-specific configuration below.
+# 3. Register the role in .codex/config.toml under [agents.<name>].
+# 4. Set config_file there to the corresponding file under agents/.
+# 5. Remove this example if specialized agents are not required.
 #
 # Specialized agents should have a narrow and clearly defined purpose.
 # Shared project knowledge must remain in docs/ rather than being
@@ -22,7 +24,7 @@
 # - AGENTS.md
 # - docs/
 # - .codex/config.toml
-# - .codex/skills/
+# - .agents/skills/
 #
 # Create a specialized agent only when a separate role or execution
 # context provides a concrete benefit.
@@ -38,7 +40,12 @@
 #
 # description = "Reviews database migrations for correctness and safety."
 #
-# <Add the supported agent description configuration here.>
+# The copied file must define the supported custom-agent fields, including
+# name, description, and developer_instructions.
+#
+# name = "reviewer"
+# description = "Reviews changes for correctness and safety."
+# developer_instructions = "Inspect the relevant project context and report findings with evidence."
 
 
 # ---------------------------------------------------------------------
@@ -61,7 +68,7 @@
 #
 #   AGENTS.md
 #
-# <Add supported role-specific agent configuration here.>
+# developer_instructions = "Add role-specific instructions here."
 
 
 # ---------------------------------------------------------------------

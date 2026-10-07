@@ -8,14 +8,16 @@ description: Example project skill demonstrating the structure of a reusable Cla
 <!--
 PURPOSE
 
-This is an example project-level Claude Code skill.
+This is an example project-level Claude Code skill. The `SKILL.md.example`
+suffix intentionally keeps it outside the active skill discovery path.
 
 It demonstrates where reusable, task-specific instructions can be stored
 without turning the skill into another source of general project knowledge.
 
 When creating a project from this template:
 
-1. Copy or rename this directory for a concrete skill.
+1. Create `.claude/skills/<skill-name>/SKILL.md` for a concrete skill by
+   copying or adapting this template.
 2. Replace the example metadata and instructions.
 3. Add supporting files only when they are useful to the skill.
 4. Remove this example if the project does not require custom skills.

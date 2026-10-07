@@ -369,7 +369,7 @@ agent configuration mechanisms.
 
 ---
 
-## 16. Skills, Agents, Commands, and Hooks
+## 16. Skills, Agents, and Hooks
 
 <!--
 Supported AI tools may provide different extension mechanisms.
@@ -377,10 +377,10 @@ Supported AI tools may provide different extension mechanisms.
 Examples include:
 - reusable skills
 - specialized subagents
-- commands
 - lifecycle hooks
 
-Their exact implementation belongs in .codex/ or .claude/.
+Their exact implementation belongs in `.agents/`, `.codex/`, or `.claude/`.
+For reusable Claude Code workflows, use Skills under `.claude/skills/`.
 -->
 
 Extensions should exist to solve a clear project need.
@@ -388,7 +388,7 @@ Extensions should exist to solve a clear project need.
 Avoid creating multiple mechanisms that encode the same project rule.
 
 Shared project knowledge should remain in `docs/` rather than being
-duplicated across skills, agents, commands, and hooks.
+duplicated across skills, agents, and hooks.
 
 ---
 
