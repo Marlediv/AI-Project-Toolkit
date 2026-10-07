@@ -1,0 +1,115 @@
+#:schema https://developers.openai.com/codex/config-schema.json
+
+# Codex project configuration
+#
+# PURPOSE
+#
+# This file is the project-level configuration entry point for Codex.
+#
+# Keep shared project knowledge in:
+#
+#   docs/
+#
+# Keep project-level Codex instructions in:
+#
+#   AGENTS.md
+#
+# Use this file only for Codex configuration that should apply to this
+# repository.
+#
+# Codex loads project-level .codex configuration only when the project
+# is trusted.
+#
+# The template intentionally enables no project-specific behavior by
+# default. Uncomment or add configuration only when the project has a
+# concrete requirement.
+#
+# Never store credentials, access tokens, API keys, or other secrets
+# directly in this file.
+
+
+# ---------------------------------------------------------------------
+# Model behavior
+# ---------------------------------------------------------------------
+#
+# Model selection and reasoning settings should normally remain user
+# preferences unless the project has a strong reason to standardize them.
+#
+# Consult the current Codex configuration reference before adding model
+# settings here.
+
+
+# ---------------------------------------------------------------------
+# Approval and sandbox behavior
+# ---------------------------------------------------------------------
+#
+# Codex supports project-level approval and sandbox configuration.
+#
+# These settings directly affect what Codex may execute or modify and
+# should therefore be chosen deliberately for each project.
+#
+# The template does not override Codex defaults or user configuration.
+#
+# Examples of configuration areas supported by Codex include:
+#
+#   approval_policy
+#   sandbox_mode
+#   sandbox_workspace_write.*
+#
+# Consult the current Codex configuration reference before enabling them.
+
+
+# ---------------------------------------------------------------------
+# MCP servers
+# ---------------------------------------------------------------------
+#
+# Project-specific MCP servers may be configured using:
+#
+#   [mcp_servers.<name>]
+#
+# Example structure:
+#
+#   [mcp_servers.example]
+#   url = "https://example.com/mcp"
+#
+# Do not enable example servers merely to demonstrate configuration.
+#
+# Add an MCP server only when it serves a concrete project need.
+#
+# Prefer:
+#
+# - descriptive server names
+# - minimum required permissions
+# - explicit tool restrictions where appropriate
+# - environment-based or external secret management
+#
+# Never commit credentials directly into MCP configuration.
+
+
+# ---------------------------------------------------------------------
+# Plugins
+# ---------------------------------------------------------------------
+#
+# Projects that intentionally use Codex plugins may configure them here.
+#
+# Plugin configuration should only be added when the project actually
+# depends on a plugin.
+#
+# Do not enable arbitrary example plugins in the base template.
+
+
+# ---------------------------------------------------------------------
+# Project-specific configuration
+# ---------------------------------------------------------------------
+#
+# Add project-specific Codex configuration below this section.
+#
+# Before adding a setting, consider whether it belongs instead in:
+#
+# - AGENTS.md                    project-level Codex instructions
+# - docs/                       shared project knowledge
+# - .codex/agents/              specialized Codex agents
+# - .codex/skills/              reusable Codex skills
+# - .codex/hooks.json           Codex lifecycle hooks
+#
+# Keep this file focused on actual Codex configuration.

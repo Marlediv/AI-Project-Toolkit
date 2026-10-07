@@ -1,0 +1,107 @@
+# Example Codex agent configuration
+#
+# PURPOSE
+#
+# This file demonstrates where project-specific Codex agent
+# configurations can be defined.
+#
+# It is not intended to represent a required agent role.
+#
+# When creating a project from this template:
+#
+# 1. Copy or rename this file for a concrete agent role.
+# 2. Replace the example values with project-specific configuration.
+# 3. Remove this example if specialized agents are not required.
+#
+# Specialized agents should have a narrow and clearly defined purpose.
+# Shared project knowledge must remain in docs/ rather than being
+# duplicated into individual agent configurations.
+#
+# Before creating an agent, consider whether the requirement belongs in:
+#
+# - AGENTS.md
+# - docs/
+# - .codex/config.toml
+# - .codex/skills/
+#
+# Create a specialized agent only when a separate role or execution
+# context provides a concrete benefit.
+
+
+# ---------------------------------------------------------------------
+# Agent identity
+# ---------------------------------------------------------------------
+#
+# Give the agent a short description that explains when it should be used.
+#
+# Example:
+#
+# description = "Reviews database migrations for correctness and safety."
+#
+# <Add the supported agent description configuration here.>
+
+
+# ---------------------------------------------------------------------
+# Agent behavior
+# ---------------------------------------------------------------------
+#
+# Define only instructions that are specific to this agent's role.
+#
+# Do not copy general project conventions, architecture, testing rules,
+# or AI collaboration principles into this file.
+#
+# The agent should rely on the repository's shared sources of truth:
+#
+#   docs/architecture.md
+#   docs/conventions.md
+#   docs/testing.md
+#   docs/ai-usage.md
+#
+# and the project-level Codex instructions in:
+#
+#   AGENTS.md
+#
+# <Add supported role-specific agent configuration here.>
+
+
+# ---------------------------------------------------------------------
+# Model and reasoning
+# ---------------------------------------------------------------------
+#
+# Model selection and reasoning settings should normally remain inherited
+# from the surrounding Codex configuration.
+#
+# Override them for a specialized agent only when the role has a concrete
+# reason to require different behavior.
+#
+# <Add supported model or reasoning overrides here if required.>
+
+
+# ---------------------------------------------------------------------
+# Tools and permissions
+# ---------------------------------------------------------------------
+#
+# Give specialized agents only the capabilities required for their role.
+#
+# Consider:
+#
+# - whether the agent needs write access
+# - whether external systems are required
+# - whether shell or execution access is necessary
+# - whether MCP tools are required
+# - whether the role can remain read-only
+#
+# Access to a tool does not automatically imply permission to modify the
+# system behind it.
+#
+# <Add supported tool or permission configuration here if required.>
+
+
+# ---------------------------------------------------------------------
+# Project-specific configuration
+# ---------------------------------------------------------------------
+#
+# Add additional supported Codex agent configuration below.
+#
+# Consult the current Codex configuration reference when introducing
+# configuration fields, because supported agent capabilities may evolve.

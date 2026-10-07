@@ -1,0 +1,100 @@
+# Example GitHub Actions CI workflow
+#
+# PURPOSE
+#
+# This file demonstrates where the project's continuous integration
+# workflow can be defined.
+#
+# It is intentionally named "ci.yml.example" so GitHub Actions does not
+# treat it as an active workflow.
+#
+# When creating a project from this template:
+#
+# 1. Review the project's technology stack and validation requirements.
+# 2. Replace the placeholder validation steps below.
+# 3. Rename this file to "ci.yml" to enable the workflow.
+# 4. Verify the workflow in a pull request before relying on it.
+#
+# The authoritative testing and validation strategy belongs in:
+#
+#   docs/testing.md
+#
+# This workflow should automate that strategy where practical rather
+# than defining an independent set of validation requirements.
+#
+# Do not store secrets directly in this file.
+# Use GitHub's supported secret-management mechanisms where required.
+
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      # ---------------------------------------------------------------
+      # Runtime setup
+      # ---------------------------------------------------------------
+      #
+      # Add only the runtimes and tools required by the project.
+      #
+      # Examples may include:
+      #
+      # - Python
+      # - Node.js
+      # - Java
+      # - .NET
+      # - Go
+      # - Rust
+      #
+      # Pin action versions deliberately and keep them maintained.
+
+      # ---------------------------------------------------------------
+      # Dependencies
+      # ---------------------------------------------------------------
+      #
+      # Install project dependencies here.
+      #
+      # Prefer reproducible installation using the project's lock files
+      # or equivalent dependency-management mechanism.
+
+      # ---------------------------------------------------------------
+      # Static validation
+      # ---------------------------------------------------------------
+      #
+      # Add project-specific validation such as:
+      #
+      # - formatting checks
+      # - linting
+      # - type checking
+      # - schema validation
+      # - configuration validation
+
+      # ---------------------------------------------------------------
+      # Tests
+      # ---------------------------------------------------------------
+      #
+      # Run the tests required by docs/testing.md.
+      #
+      # Examples may include:
+      #
+      # - unit tests
+      # - integration tests
+      # - contract tests
+
+      - name: Template placeholder
+        run: |
+          echo "Configure project-specific CI validation before enabling this workflow."
